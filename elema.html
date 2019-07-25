@@ -41,7 +41,7 @@
                             {{change}}
                         </h6>
                         <div class="smallbox">
-                            <input placeholder="{seach}">
+                            <input placeholder="">
                             
                         </div>
                     </div>
@@ -50,14 +50,14 @@
 
             Vue.component('no',{
                 template:`
-                    <elema v-bind:change="'未能获取地址'":seach="'dasdas'">
+                    <elema v-bind:change="'未能获取地址'":seach="'搜索饿了么商家、商品名称'">
 
                     </elema>
                 `
             })
             Vue.component('yea',{
                 template:`
-                    <elema v-bind:change="'选择收货地址'":seach="'dasdas'">
+                    <elema v-bind:change="'选择收货地址'":seach="'请输入地址'">
 
                     </elema>
                 `
