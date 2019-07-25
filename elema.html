@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+    </head>
+    <style>
+        .bigbox{
+            background:skyblue;
+            width:200px;
+            padding-bottom:10px;
+            margin-bottom: 20px
+        }
+        .smallbox{
+            margin: 0 5px;
+        }
+        h6{
+            color:white;
+            line-height: 30px;
+            height:30px;
+            margin:0;
+        }
+        input{
+            margin:0 auto;
+            display: block
+        }
+    </style>
+	<body>
+		<div id="demo">
+			
+		</div>
+		<script src="vue.js"></script>
+        <script src="elema.js"></script>
+        <script>
+            Vue.component('elema',{
+                props:["change","seach"],
+                template:`
+                    <div class='bigbox'>
+                        <h6>
+                            {{change}}
+                        </h6>
+                        <div class="smallbox">
+                            <input placeholder="{seach}">
+                            
+                        </div>
+                    </div>
+                `
+            })
+
+            Vue.component('no',{
+                template:`
+                    <elema v-bind:change="'未能获取地址'":seach="'dasdas'">
+
+                    </elema>
+                `
+            })
+            Vue.component('yea',{
+                template:`
+                    <elema v-bind:change="'选择收货地址'":seach="'dasdas'">
+
+                    </elema>
+                `
+            })
+            var vm = new Vue({
+                el:"#demo",
+                template:`
+                    <div>
+                        <no></no>
+                        <yea></yea>
+                    </div>
+                `
+            })
+        </script>
+	</body>
+</html>
